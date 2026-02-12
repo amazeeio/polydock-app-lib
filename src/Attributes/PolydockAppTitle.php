@@ -26,8 +26,8 @@ use Attribute;
 class PolydockAppTitle
 {
     /**
-     * @param string $title The human-readable title for the app class
-     * @param string|null $description Optional description for additional context
+     * @param  string  $title  The human-readable title for the app class
+     * @param  string|null  $description  Optional description for additional context
      */
     public function __construct(
         public readonly string $title,

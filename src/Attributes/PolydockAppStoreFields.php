@@ -45,8 +45,8 @@ class PolydockAppStoreFields
     public const FIELD_PREFIX = 'app_config_';
 
     /**
-     * @param string $formMethod Static method name that returns Filament form schema array
-     * @param string $infolistMethod Static method name that returns Filament infolist schema array
+     * @param  string  $formMethod  Static method name that returns Filament form schema array
+     * @param  string  $infolistMethod  Static method name that returns Filament infolist schema array
      */
     public function __construct(
         public readonly string $formMethod = 'getStoreAppFormSchema',

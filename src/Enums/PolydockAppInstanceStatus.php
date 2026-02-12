@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace FreedomtechHosting\PolydockApp\Enums;
 
@@ -24,12 +24,12 @@ enum PolydockAppInstanceStatus: string implements HasColor, HasIcon, HasLabel
     case POST_CREATE_RUNNING = 'post-create-running';
     case POST_CREATE_COMPLETED = 'post-create-completed';
     case POST_CREATE_FAILED = 'post-create-failed';
-    
+
     case PENDING_PRE_DEPLOY = 'pending-pre-deploy';
     case PRE_DEPLOY_RUNNING = 'pre-deploy-running';
     case PRE_DEPLOY_COMPLETED = 'pre-deploy-completed';
     case PRE_DEPLOY_FAILED = 'pre-deploy-failed';
-    
+
     case PENDING_DEPLOY = 'pending-deploy';
     case DEPLOY_RUNNING = 'deploy-running';
     case DEPLOY_COMPLETED = 'deploy-completed';
@@ -101,7 +101,7 @@ enum PolydockAppInstanceStatus: string implements HasColor, HasIcon, HasLabel
     {
         return match ($this) {
             self::NEW => 'New',
-            self::PENDING_PRE_CREATE => 'Pending pre-create',   
+            self::PENDING_PRE_CREATE => 'Pending pre-create',
             self::PRE_CREATE_RUNNING => 'Pre-create running',
             self::PRE_CREATE_COMPLETED => 'Pre-create completed',
             self::PRE_CREATE_FAILED => 'Pre-create failed',
@@ -134,7 +134,7 @@ enum PolydockAppInstanceStatus: string implements HasColor, HasIcon, HasLabel
             self::REMOVE_COMPLETED => 'Remove completed',
             self::REMOVE_FAILED => 'Remove failed',
             self::PENDING_POST_REMOVE => 'Pending post-remove',
-            self::POST_REMOVE_RUNNING => 'Post-remove running',   
+            self::POST_REMOVE_RUNNING => 'Post-remove running',
             self::POST_REMOVE_COMPLETED => 'Post-remove completed',
             self::POST_REMOVE_FAILED => 'Post-remove failed',
             self::REMOVED => 'Removed',
@@ -163,7 +163,7 @@ enum PolydockAppInstanceStatus: string implements HasColor, HasIcon, HasLabel
 
     public function getColor(): string
     {
-       return $this->getStatusColor();
+        return $this->getStatusColor();
     }
 
     public function getStatusColor(): string
@@ -172,7 +172,7 @@ enum PolydockAppInstanceStatus: string implements HasColor, HasIcon, HasLabel
             self::NEW => 'gray',
             self::PENDING_PRE_CREATE => 'warning',
             self::PRE_CREATE_RUNNING => 'warning',
-            self::PRE_CREATE_COMPLETED => 'success',   
+            self::PRE_CREATE_COMPLETED => 'success',
             self::PRE_CREATE_FAILED => 'danger',
             self::PENDING_CREATE => 'warning',
             self::CREATE_RUNNING => 'warning',
@@ -233,7 +233,7 @@ enum PolydockAppInstanceStatus: string implements HasColor, HasIcon, HasLabel
     public function getIcon(): string
     {
         return $this->getStatusIcon();
-    }   
+    }
 
     public function getStatusIcon(): string
     {

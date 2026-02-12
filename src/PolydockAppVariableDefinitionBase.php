@@ -1,11 +1,10 @@
-<?php 
+<?php
 
 namespace FreedomtechHosting\PolydockApp;
 
 class PolydockAppVariableDefinitionBase implements PolydockAppVariableDefinitionInterface
 {
     protected string $name;
-    
 
     public function __construct(string $name)
     {
@@ -20,6 +19,7 @@ class PolydockAppVariableDefinitionBase implements PolydockAppVariableDefinition
     public function setName(string $name): self
     {
         $this->name = $name;
+
         return $this;
     }
 }
