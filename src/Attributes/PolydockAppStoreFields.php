@@ -20,14 +20,14 @@ use Attribute;
  * #[PolydockAppStoreFields]
  * class MyApp extends PolydockAppBase implements HasStoreAppFormFields
  * {
- *     public static function getStoreAppFormSchema(): array
+ *     public static function getStoreFormSchema(): array
  *     {
  *         return [
  *             Forms\Components\TextInput::make('my_field')->required(),
  *         ];
  *     }
  *
- *     public static function getStoreAppInfolistSchema(): array
+ *     public static function getStoreInfolistSchema(): array
  *     {
  *         return [
  *             Infolists\Components\TextEntry::make('my_field'),
@@ -49,7 +49,7 @@ class PolydockAppStoreFields
      * @param  string  $infolistMethod  Static method name that returns Filament infolist schema array
      */
     public function __construct(
-        public readonly string $formMethod = 'getStoreAppFormSchema',
-        public readonly string $infolistMethod = 'getStoreAppInfolistSchema',
+        public readonly string $formMethod = 'getStoreFormSchema',
+        public readonly string $infolistMethod = 'getStoreInfolistSchema',
     ) {}
 }

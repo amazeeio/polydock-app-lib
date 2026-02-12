@@ -2,7 +2,6 @@
 
 A PHP library providing the core interfaces, base classes, and utilities for building Polydock applications. This library defines the contract for app lifecycle management, instance handling, and integration with the Polydock engine.
 
-
 ## Quick Start
 
 Create a new Polydock app by extending `PolydockAppBase`:
@@ -61,7 +60,7 @@ Polydock App classes can define custom form fields that appear in the admin pane
 
 1. Add the `#[PolydockAppStoreFields]` attribute to your class
 2. Implement the `HasStoreAppFormFields` interface (recommended for type safety)
-3. Create static `getStoreAppFormSchema()` and `getStoreAppInfolistSchema()` methods
+3. Create static `getStoreFormSchema()` and `getStoreInfolistSchema()` methods
 
 ```php
 use FreedomtechHosting\PolydockApp\Attributes\PolydockAppTitle;
@@ -74,7 +73,7 @@ use Filament\Infolists;
 #[PolydockAppStoreFields]
 class MyCustomApp extends PolydockAppBase implements HasStoreAppFormFields
 {
-    public static function getStoreAppFormSchema(): array
+    public static function getStoreFormSchema(): array
     {
         return [
             Forms\Components\Section::make('Custom Settings')
@@ -101,7 +100,7 @@ class MyCustomApp extends PolydockAppBase implements HasStoreAppFormFields
         ];
     }
 
-    public static function getStoreAppInfolistSchema(): array
+    public static function getStoreInfolistSchema(): array
     {
         return [
             Infolists\Components\Section::make('Custom Settings')

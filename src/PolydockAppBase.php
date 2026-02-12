@@ -200,4 +200,168 @@ abstract class PolydockAppBase implements PolydockAppInterface
 
         return true;
     }
+
+    /**
+     * Get custom form fields for Store App configuration.
+     *
+     * Override this method in subclasses to provide app-specific configuration fields
+     * that appear when creating/editing a Store App in the admin panel.
+     *
+     * Field names should use snake_case without any prefix - the 'app_config_' prefix
+     * is added automatically when the schema is processed.
+     *
+     * Use the 'encrypted' extraAttribute to mark sensitive fields for encrypted storage:
+     *   ->extraAttributes(['encrypted' => true])
+     *
+     * Classes using this method should also:
+     * - Add the #[PolydockAppStoreFields] attribute to the class
+     * - Implement the HasStoreAppFormFields interface
+     *
+     * @return array<\Filament\Forms\Components\Component> Array of Filament form components
+     *
+     * @example
+     * ```php
+     * public static function getStoreFormSchema(): array
+     * {
+     *     return [
+     *         Forms\Components\Section::make('API Settings')
+     *             ->schema([
+     *                 Forms\Components\TextInput::make('api_endpoint')
+     *                     ->label('API Endpoint')
+     *                     ->url()
+     *                     ->required(),
+     *                 Forms\Components\TextInput::make('api_key')
+     *                     ->label('API Key')
+     *                     ->password()
+     *                     ->extraAttributes(['encrypted' => true]),
+     *             ]),
+     *     ];
+     * }
+     * ```
+     */
+    public static function getStoreFormSchema(): array
+    {
+        return [];
+    }
+
+    /**
+     * Get infolist schema for displaying Store App configuration.
+     *
+     * Override this method in subclasses to provide app-specific display fields
+     * that appear when viewing a Store App in the admin panel.
+     *
+     * Field names should match those in getStoreFormSchema() (without prefix).
+     * The 'app_config_' prefix is added automatically when the schema is processed.
+     *
+     * Classes using this method should also:
+     * - Add the #[PolydockAppStoreFields] attribute to the class
+     * - Implement the HasStoreAppFormFields interface
+     *
+     * @return array<\Filament\Infolists\Components\Component> Array of Filament infolist components
+     *
+     * @example
+     * ```php
+     * public static function getStoreInfolistSchema(): array
+     * {
+     *     return [
+     *         Infolists\Components\Section::make('API Settings')
+     *             ->schema([
+     *                 Infolists\Components\TextEntry::make('api_endpoint')
+     *                     ->label('API Endpoint'),
+     *                 Infolists\Components\TextEntry::make('api_key')
+     *                     ->label('API Key')
+     *                     ->formatStateUsing(fn ($state) => $state ? '••••••••' : 'Not set'),
+     *             ]),
+     *     ];
+     * }
+     * ```
+     */
+    public static function getStoreInfolistSchema(): array
+    {
+        return [];
+    }
+
+    /**
+     * Get custom form fields for App Instance configuration.
+     *
+     * Override this method in subclasses to provide instance-specific configuration fields
+     * that appear when creating an App Instance in the admin panel.
+     *
+     * Field names should use snake_case without any prefix - the 'instance_config_' prefix
+     * is added automatically when the schema is processed.
+     *
+     * Use array_merge(parent::getAppInstanceFormSchema(), [...]) in child classes
+     * to support field inheritance from parent classes.
+     *
+     * Use the 'encrypted' extraAttribute to mark sensitive fields for encrypted storage:
+     *   ->extraAttributes(['encrypted' => true])
+     *
+     * Classes using this method should also:
+     * - Add the #[PolydockAppInstanceFields] attribute to the class
+     * - Implement the HasAppInstanceFormFields interface
+     *
+     * @return array<\Filament\Forms\Components\Component> Array of Filament form components
+     *
+     * @example
+     * ```php
+     * public static function getAppInstanceFormSchema(): array
+     * {
+     *     return array_merge(parent::getAppInstanceFormSchema(), [
+     *         Forms\Components\Section::make('Instance Settings')
+     *             ->schema([
+     *                 Forms\Components\TextInput::make('custom_domain')
+     *                     ->label('Custom Domain')
+     *                     ->url(),
+     *                 Forms\Components\Toggle::make('enable_analytics')
+     *                     ->label('Enable Analytics')
+     *                     ->default(true),
+     *             ]),
+     *     ]);
+     * }
+     * ```
+     */
+    public static function getAppInstanceFormSchema(): array
+    {
+        return [];
+    }
+
+    /**
+     * Get infolist schema for displaying App Instance configuration.
+     *
+     * Override this method in subclasses to provide instance-specific display fields
+     * that appear when viewing an App Instance in the admin panel.
+     *
+     * Field names should match those in getAppInstanceFormSchema() (without prefix).
+     * The 'instance_config_' prefix is added automatically when the schema is processed.
+     *
+     * Use array_merge(parent::getAppInstanceInfolistSchema(), [...]) in child classes
+     * to support field inheritance from parent classes.
+     *
+     * Classes using this method should also:
+     * - Add the #[PolydockAppInstanceFields] attribute to the class
+     * - Implement the HasAppInstanceFormFields interface
+     *
+     * @return array<\Filament\Infolists\Components\Component> Array of Filament infolist components
+     *
+     * @example
+     * ```php
+     * public static function getAppInstanceInfolistSchema(): array
+     * {
+     *     return array_merge(parent::getAppInstanceInfolistSchema(), [
+     *         Infolists\Components\Section::make('Instance Settings')
+     *             ->schema([
+     *                 Infolists\Components\TextEntry::make('custom_domain')
+     *                     ->label('Custom Domain'),
+     *                 Infolists\Components\IconEntry::make('enable_analytics')
+     *                     ->label('Analytics Enabled')
+     *                     ->boolean(),
+     *             ]),
+     *     ]);
+     * }
+     * ```
+     */
+    public static function getAppInstanceInfolistSchema(): array
+    {
+        return [];
+    }
 }

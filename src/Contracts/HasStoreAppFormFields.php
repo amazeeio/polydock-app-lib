@@ -23,7 +23,7 @@ interface HasStoreAppFormFields
      *
      * @example
      * ```php
-     * public static function getStoreAppFormSchema(): array
+     * public static function getStoreFormSchema(): array
      * {
      *     return [
      *         Forms\Components\Section::make('AI Settings')
@@ -41,19 +41,19 @@ interface HasStoreAppFormFields
      * }
      * ```
      */
-    public static function getStoreAppFormSchema(): array;
+    public static function getStoreFormSchema(): array;
 
     /**
      * Get the Filament infolist schema for displaying Store App configuration.
      *
-     * Field names should match those in getStoreAppFormSchema() (without prefix).
+     * Field names should match those in getStoreFormSchema() (without prefix).
      * The prefix is added automatically when the schema is processed.
      *
      * @return array<\Filament\Infolists\Components\Component>
      *
      * @example
      * ```php
-     * public static function getStoreAppInfolistSchema(): array
+     * public static function getStoreInfolistSchema(): array
      * {
      *     return [
      *         Infolists\Components\Section::make('AI Settings')
@@ -68,5 +68,5 @@ interface HasStoreAppFormFields
      * }
      * ```
      */
-    public static function getStoreAppInfolistSchema(): array;
+    public static function getStoreInfolistSchema(): array;
 }
