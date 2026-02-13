@@ -185,9 +185,9 @@ interface PolydockAppInstanceInterface
      * Save the app instance
      *
      * @param  array  $options  Additional options for the save operation
-     * @return bool True if the save operation was successful, false otherwise
+     * @return mixed True if the save operation was successful, false otherwise
      */
-    public function save(array $options = []): bool;
+    public function save(array $options = []);
 
     /**
      * Set the app URL for the app instance
