@@ -82,5 +82,5 @@ interface PolydockEngineInterface
      *
      * @throws PolydockEngineProcessPolydockAppInstanceException If the app instance cannot be processed
      */
-    public function processPolydockAppInstance(PolydockAppInstanceInterface $appInstance): void;
+    public function processPolydockAppInstance(PolydockAppInstanceInterface $appInstance): PolydockAppInstanceInterface;
 }
