@@ -30,7 +30,7 @@ readonly class PolydockAppTitle
      * @param  string|null  $description  Optional description for additional context
      */
     public function __construct(
-        public string  $title,
+        public string $title,
         public ?string $description = null,
     ) {}
 }

@@ -10,9 +10,9 @@ class PolydockAppValidationException extends \Exception
     /**
      * Constructor for PolydockAppValidationException
      *
-     * @param string $message The error message
-     * @param int $code The error code
-     * @param \Throwable|null $previous The previous exception (optional)
+     * @param  string  $message  The error message
+     * @param  int  $code  The error code
+     * @param  \Throwable|null  $previous  The previous exception (optional)
      */
     public function __construct(string $message, int $code = 0, ?\Throwable $previous = null)
     {

@@ -60,7 +60,7 @@ interface PolydockEngineInterface
     /**
      * Get a polydock service provider singleton instance
      *
-     * @param string $serviceProviderName The name of the service provider
+     * @param  string  $serviceProviderName  The name of the service provider
      * @return PolydockServiceProviderInterface The service provider instance
      */
     public function getPolydockServiceProviderSingletonInstance(string $serviceProviderName): PolydockServiceProviderInterface;
@@ -76,8 +76,7 @@ interface PolydockEngineInterface
     /**
      * Process an app instance
      *
-     * @param PolydockAppInstanceInterface $appInstance The app instance to process
-     * @return void
+     * @param  PolydockAppInstanceInterface  $appInstance  The app instance to process
      *
      * @throws PolydockEngineProcessPolydockAppInstanceException If the app instance cannot be processed
      */

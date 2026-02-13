@@ -24,7 +24,6 @@ interface PolydockAppInstanceInterface
     /**
      * Set the name of the app instance
      *
-     * @param string $name
      * @return self Returns the instance for method chaining
      */
     public function setName(string $name): self;
@@ -221,5 +220,4 @@ interface PolydockAppInstanceInterface
      * @return string The generated app admin password
      */
     public function getGeneratedAppAdminPassword(): string;
-
 }
