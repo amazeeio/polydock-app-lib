@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FreedomtechHosting\PolydockApp\Loggers;
 
 use FreedomtechHosting\PolydockApp\PolydockAppLoggerInterface;

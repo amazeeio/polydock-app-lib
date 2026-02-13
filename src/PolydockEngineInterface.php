@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace FreedomtechHosting\PolydockApp;
 
 use FreedomtechHosting\PolydockApp\Exceptions\PolydockEngineProcessPolydockAppInstanceException;
