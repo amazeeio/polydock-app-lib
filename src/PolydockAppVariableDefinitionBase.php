@@ -4,12 +4,7 @@ namespace FreedomtechHosting\PolydockApp;
 
 class PolydockAppVariableDefinitionBase implements PolydockAppVariableDefinitionInterface
 {
-    protected string $name;
-
-    public function __construct(string $name)
-    {
-        $this->name = $name;
-    }
+    public function __construct(protected string $name) {}
 
     public function getName(): string
     {

@@ -60,7 +60,7 @@ Polydock App classes can define custom form fields that appear in the admin pane
 
 1. Add the `#[PolydockAppStoreFields]` attribute to your class
 2. Implement the `HasStoreAppFormFields` interface (recommended for type safety)
-3. Create static `getStoreFormSchema()` and `getStoreInfolistSchema()` methods
+3. Create static `getStoreAppFormSchema()` and `getStoreAppInfolistSchema()` methods
 
 ```php
 use FreedomtechHosting\PolydockApp\Attributes\PolydockAppTitle;
@@ -73,7 +73,7 @@ use Filament\Infolists;
 #[PolydockAppStoreFields]
 class MyCustomApp extends PolydockAppBase implements HasStoreAppFormFields
 {
-    public static function getStoreFormSchema(): array
+    public static function getStoreAppFormSchema(): array
     {
         return [
             Forms\Components\Section::make('Custom Settings')
@@ -100,7 +100,7 @@ class MyCustomApp extends PolydockAppBase implements HasStoreAppFormFields
         ];
     }
 
-    public static function getStoreInfolistSchema(): array
+    public static function getStoreAppInfolistSchema(): array
     {
         return [
             Infolists\Components\Section::make('Custom Settings')

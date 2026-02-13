@@ -4,7 +4,9 @@ namespace FreedomtechHosting\PolydockApp\Traits;
 
 use FreedomtechHosting\PolydockApp\Loggers\PolydockAppCacheLogger;
 use FreedomtechHosting\PolydockApp\Loggers\PolydockAppEchoLogger;
+use FreedomtechHosting\PolydockApp\PolydockAppBase;
 use FreedomtechHosting\PolydockApp\PolydockAppLoggerInterface;
+use FreedomtechHosting\PolydockApp\PolydockEngineBase;
 
 trait PolydockAppLoggerTrait
 {
@@ -42,9 +44,9 @@ trait PolydockAppLoggerTrait
     /**
      * Log an informational message
      *
-     * @param  string  $message  The message to log
-     * @param  array  $context  Additional context data for the log entry
-     * @return self Returns the instance for method chaining
+     * @param string $message The message to log
+     * @param array $context Additional context data for the log entry
+     * @return PolydockAppBase|PolydockEngineBase|PolydockAppLoggerTrait Returns the instance for method chaining
      */
     public function info(string $message, array $context = []): self
     {
@@ -56,9 +58,9 @@ trait PolydockAppLoggerTrait
     /**
      * Log an error message
      *
-     * @param  string  $message  The message to log
-     * @param  array  $context  Additional context data for the log entry
-     * @return self Returns the instance for method chaining
+     * @param string $message The message to log
+     * @param array $context Additional context data for the log entry
+     * @return PolydockAppBase|PolydockEngineBase|PolydockAppLoggerTrait Returns the instance for method chaining
      */
     public function error(string $message, array $context = []): self
     {
@@ -70,9 +72,9 @@ trait PolydockAppLoggerTrait
     /**
      * Log a warning message
      *
-     * @param  string  $message  The message to log
-     * @param  array  $context  Additional context data for the log entry
-     * @return self Returns the instance for method chaining
+     * @param string $message The message to log
+     * @param array $context Additional context data for the log entry
+     * @return PolydockAppBase|PolydockEngineBase|PolydockAppLoggerTrait Returns the instance for method chaining
      */
     public function warning(string $message, array $context = []): self
     {
@@ -84,9 +86,9 @@ trait PolydockAppLoggerTrait
     /**
      * Log a debug message
      *
-     * @param  string  $message  The message to log
-     * @param  array  $context  Additional context data for the log entry
-     * @return self Returns the instance for method chaining
+     * @param string $message The message to log
+     * @param array $context Additional context data for the log entry
+     * @return PolydockAppBase|PolydockEngineBase|PolydockAppLoggerTrait Returns the instance for method chaining
      */
     public function debug(string $message, array $context = []): self
     {

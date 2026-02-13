@@ -2,6 +2,8 @@
 
 namespace FreedomtechHosting\PolydockApp;
 
+use FreedomtechHosting\PolydockApp\Exceptions\PolydockEngineProcessPolydockAppInstanceException;
+
 interface PolydockEngineInterface
 {
     /**
@@ -58,8 +60,7 @@ interface PolydockEngineInterface
     /**
      * Get a polydock service provider singleton instance
      *
-     * @param  string  $serviceProviderName  The name of the service provider
-     * @param  array  $config  The configuration for the service provider
+     * @param string $serviceProviderName The name of the service provider
      * @return PolydockServiceProviderInterface The service provider instance
      */
     public function getPolydockServiceProviderSingletonInstance(string $serviceProviderName): PolydockServiceProviderInterface;
@@ -75,10 +76,10 @@ interface PolydockEngineInterface
     /**
      * Process an app instance
      *
-     * @param  PolydockAppInstance  $appInstance  The app instance to process
+     * @param PolydockAppInstanceInterface $appInstance The app instance to process
      * @return void
      *
      * @throws PolydockEngineProcessPolydockAppInstanceException If the app instance cannot be processed
      */
-    public function processPolydockAppInstance(PolydockAppInstanceInterface $appInstance);
+    public function processPolydockAppInstance(PolydockAppInstanceInterface $appInstance): void;
 }

@@ -221,7 +221,7 @@ abstract class PolydockAppBase implements PolydockAppInterface
      *
      * @example
      * ```php
-     * public static function getStoreFormSchema(): array
+     * public static function getStoreAppFormSchema(): array
      * {
      *     return [
      *         Forms\Components\Section::make('API Settings')
@@ -239,7 +239,7 @@ abstract class PolydockAppBase implements PolydockAppInterface
      * }
      * ```
      */
-    public static function getStoreFormSchema(): array
+    public static function getStoreAppFormSchema(): array
     {
         return [];
     }
@@ -250,7 +250,7 @@ abstract class PolydockAppBase implements PolydockAppInterface
      * Override this method in subclasses to provide app-specific display fields
      * that appear when viewing a Store App in the admin panel.
      *
-     * Field names should match those in getStoreFormSchema() (without prefix).
+     * Field names should match those in getStoreAppFormSchema() (without prefix).
      * The 'app_config_' prefix is added automatically when the schema is processed.
      *
      * Classes using this method should also:
@@ -261,7 +261,7 @@ abstract class PolydockAppBase implements PolydockAppInterface
      *
      * @example
      * ```php
-     * public static function getStoreInfolistSchema(): array
+     * public static function getStoreAppInfolistSchema(): array
      * {
      *     return [
      *         Infolists\Components\Section::make('API Settings')
@@ -276,7 +276,7 @@ abstract class PolydockAppBase implements PolydockAppInterface
      * }
      * ```
      */
-    public static function getStoreInfolistSchema(): array
+    public static function getStoreAppInfolistSchema(): array
     {
         return [];
     }

@@ -45,7 +45,7 @@ class PolydockAppInstanceFields
     /**
      * Prefix applied to all custom field names to avoid collisions with model fields.
      */
-    public const FIELD_PREFIX = 'instance_config_';
+    public const string FIELD_PREFIX = 'instance_config_';
 
     /**
      * @param  string  $formMethod  Static method name that returns Filament form schema array

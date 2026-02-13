@@ -22,6 +22,21 @@ interface PolydockAppInstanceInterface
     public function getApp(): PolydockAppInterface;
 
     /**
+     * Set the name of the app instance
+     *
+     * @param string $name
+     * @return self Returns the instance for method chaining
+     */
+    public function setName(string $name): self;
+
+    /**
+     * Get the name of the instance
+     *
+     * @return string The name
+     */
+    public function getName(): string;
+
+    /**
      * Set the type of the app instance
      *
      * @param  string  $appType  The type of the app instance
@@ -171,7 +186,7 @@ interface PolydockAppInstanceInterface
      * @param  array  $options  Additional options for the save operation
      * @return bool True if the save operation was successful, false otherwise
      */
-    public function save(array $options = []);
+    public function save(array $options = []): bool;
 
     /**
      * Set the app URL for the app instance
@@ -206,4 +221,5 @@ interface PolydockAppInstanceInterface
      * @return string The generated app admin password
      */
     public function getGeneratedAppAdminPassword(): string;
+
 }

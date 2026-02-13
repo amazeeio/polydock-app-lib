@@ -23,14 +23,14 @@ use Attribute;
  * ```
  */
 #[Attribute(Attribute::TARGET_CLASS)]
-class PolydockAppTitle
+readonly class PolydockAppTitle
 {
     /**
      * @param  string  $title  The human-readable title for the app class
      * @param  string|null  $description  Optional description for additional context
      */
     public function __construct(
-        public readonly string $title,
-        public readonly ?string $description = null,
+        public string  $title,
+        public ?string $description = null,
     ) {}
 }
