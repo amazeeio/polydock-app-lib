@@ -86,18 +86,18 @@ interface PolydockAppInstanceInterface
      * Store a key-value pair for the app instance
      *
      * @param  string  $key  The key to store
-     * @param  string  $value  The value to store
+     * @param  mixed  $value  The value to store
      * @return self Returns the instance for method chaining
      */
-    public function storeKeyValue(string $key, string $value): self;
+    public function storeKeyValue(string $key, mixed $value): self;
 
     /**
      * Get a stored value by key
      *
      * @param  string  $key  The key to retrieve
-     * @return string The stored value, or empty string if not found
+     * @return mixed The stored value, or empty string if not found
      */
-    public function getKeyValue(string $key): string;
+    public function getKeyValue(string $key): mixed;
 
     /**
      * Delete a stored key-value pair
