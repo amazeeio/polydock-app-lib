@@ -87,9 +87,9 @@ interface PolydockAppInstanceInterface
      *
      * @param  string  $key  The key to store
      * @param  mixed  $value  The value to store
-     * @return self Returns the instance for method chaining
+     * @return PolydockAppInstanceInterface Returns the instance for method chaining
      */
-    public function storeKeyValue(string $key, mixed $value): self;
+    public function storeKeyValue(string $key, mixed $value): PolydockAppInstanceInterface;
 
     /**
      * Get a stored value by key
