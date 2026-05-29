@@ -85,7 +85,6 @@ enum PolydockAppInstanceStatus: string implements HasColor, HasIcon, HasLabel
     case PENDING_PURGE = 'pending-purge';
     case PURGE_RUNNING = 'purge-running';
     case PURGE_FAILED = 'purge-failed';
-    case PURGED = 'purged';
 
     public function toString(): string
     {
@@ -146,7 +145,6 @@ enum PolydockAppInstanceStatus: string implements HasColor, HasIcon, HasLabel
             self::PENDING_PURGE => 'Pending purge',
             self::PURGE_RUNNING => 'Purge running',
             self::PURGE_FAILED => 'Purge failed',
-            self::PURGED => 'Purged',
             self::PENDING_PRE_UPGRADE => 'Pending pre-upgrade',
             self::PRE_UPGRADE_RUNNING => 'Pre-upgrade running',
             self::PRE_UPGRADE_COMPLETED => 'Pre-upgrade completed',
@@ -219,7 +217,6 @@ enum PolydockAppInstanceStatus: string implements HasColor, HasIcon, HasLabel
             self::PENDING_PURGE => 'warning',
             self::PURGE_RUNNING => 'warning',
             self::PURGE_FAILED => 'danger',
-            self::PURGED => 'gray',
             self::PENDING_PRE_UPGRADE => 'warning',
             self::PRE_UPGRADE_RUNNING => 'warning',
             self::PRE_UPGRADE_COMPLETED => 'success',
@@ -292,7 +289,6 @@ enum PolydockAppInstanceStatus: string implements HasColor, HasIcon, HasLabel
             self::PENDING_PURGE => 'heroicon-o-clock',
             self::PURGE_RUNNING => 'heroicon-o-arrow-path',
             self::PURGE_FAILED => 'heroicon-o-x-mark',
-            self::PURGED => 'heroicon-o-archive-box-x-mark',
             self::PENDING_PRE_UPGRADE => 'heroicon-o-clock',
             self::PRE_UPGRADE_RUNNING => 'heroicon-o-arrow-path',
             self::PRE_UPGRADE_COMPLETED => 'heroicon-o-check',
