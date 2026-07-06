@@ -1,3 +1,5 @@
+> **NOTE: Deprecated** — see the [polydock-engine](https://github.com/amazeeio/polydock-engine) repo.
+
 # Polydock App Library
 
 A PHP library providing the core interfaces, base classes, and utilities for building Polydock applications. This library defines the contract for app lifecycle management, instance handling, and integration with the Polydock engine.
